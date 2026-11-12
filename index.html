@@ -1,0 +1,188 @@
+       
+        <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রেজাল্ট ও ভর্তি আপডেট</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 15px;
+            color: #1e293b;
+        }
+        /* টপ বার */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 12px 15px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+        }
+        .badge {
+            background: #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0f766e;
+        }
+        /* কাউন্টডাউন কার্ড */
+        .countdown-card {
+            background: linear-gradient(135deg, #0d9488, #115e59);
+            color: white;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2);
+        }
+        .timer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        .time-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 55px;
+        }
+        .time-box span {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* মেনু আইকন গ্রিড */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .icon-box {
+            background: #ccfbf1;
+            color: #0f766e;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-size: 18px;
+        }
+        /* খবর ও বিজ্ঞপ্তি কার্ড */
+        .news-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .news-thumb {
+            width: 70px;
+            height: 70px;
+            background: #0d9488;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .news-title {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .news-time {
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span class="badge">HSC ▾</span>
+        <strong>রেজাল্ট অ্যাপ ২০২৬</strong>
+        <span class="badge">১২ নভে</span>
+    </div>
+
+    <div class="countdown-card">
+        <div style="font-size: 16px; font-weight: bold;">ভর্তি পরীক্ষার কাউন্টডাউন</div>
+        <div class="timer" id="countdown">
+            <div class="time-box"><span id="days">00</span>দিন</div>
+            <div class="time-box"><span id="hours">00</span>ঘণ্টা</div>
+            <div class="time-box"><span id="minutes">00</span>মিনিট</div>
+            <div class="time-box"><span id="seconds">00</span>সেকেন্ড</div>
+        </div>
+    </div>
+
+    <div class="menu-grid">
+        <div class="menu-item"><div class="icon-box">📄</div>রেজাল্ট</div>
+        <div class="menu-item"><div class="icon-box">💰</div>বৃত্তি</div>
+        <div class="menu-item"><div class="icon-box">🏛️</div>ভর্তি</div>
+        <div class="menu-item"><div class="icon-box">📖</div>প্রস্তুতি</div>
+    </div>
+
+    <h3 style="margin-bottom: 10px; border-left: 4px solid #0d9488; padding-left: 8px;">খবর ও বিজ্ঞপ্তি</h3>
+    
+    <div id="news-container">
+        <div class="news-card">
+            <div class="news-thumb">ভর্তি<br>বিজ্ঞপ্তি</div>
+            <div>
+                <div class="news-title">ভর্তি পরীক্ষার তারিখ চূড়ান্ত করল ১২ প্রতিষ্ঠান</div>
+                <div class="news-time">⏰ ১৪ ঘণ্টা আগে</div>
+            </div>
+        </div>
+        <div class="news-card">
+            <div class="news-thumb">ঢাবি<br>আবেদন</div>
+            <div>
+                <div class="news-title">ঢাবিতে ২০২৬-২৭ শিক্ষাবর্ষের ভর্তি আবেদন শুরু</div>
+                <div class="news-time">⏰ ২০ ঘণ্টা আগে</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // কাউন্টডাউনের শেষ তারিখ (এখানে তোমার ইচ্ছামতো তারিখ ও সময় দিতে পারো)
+        const targetDate = new Date("December 31, 2026 23:59:59").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance > 0) {
+                document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            } else {
+                document.getElementById("countdown").innerText = "সময় শেষ!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
